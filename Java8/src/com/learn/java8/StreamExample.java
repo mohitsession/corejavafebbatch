@@ -23,15 +23,12 @@ public class StreamExample {
 			if (result.size() >= 3)
 				break;
 		}
-		
+
 		System.out.println(result);
 
-		List<String> resultUsingStream = names.stream()
-				.filter(n -> n.length() > 3)
-				.map(s -> 
-				s.toUpperCase()).limit(3)
+		List<String> resultUsingStream = names.stream().filter(n -> n.length() > 3).map(s -> s.toUpperCase()).limit(3)
 				.collect(Collectors.toList());
-		
+
 		// for debugging
 		List<String> resultUsingStream1 = names.stream().filter(n -> {
 			boolean result2 = n.length() > 3;

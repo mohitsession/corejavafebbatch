@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/studentdb</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">admin</property>
+        
+        <property name="show_sql">true</property>
+        <property name="hbm2ddl.auto">none</property>
+		<!-- 
+		create -> drops and re-creates all the tables
+		create-drop -> drops the table and create the table but at end of application it will drop that tables. // testing purpose
+		update -> its add the missing columns/tables
+		validate-> app start it will validate whether the tables and columns are in places. if anything is missing it will throw error. 
+		none -> it wont do anything
+		 -->
+        <mapping class="com.learn.Student"/>
+    </session-factory>
+</hibernate-configuration>
